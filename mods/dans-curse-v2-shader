@@ -1,8 +1,8 @@
 type=shader
 name=Dan's Curse V2
-description=Dan's Curse con nebbia e illuminazione riscritte: foschia a terra con banchi in movimento, nebbia illuminata dalla luna e dalle torce, ombre senza rumore, luce del gioco rispettata. Richiede "Better rendering" attivo.
+description=Dan's Curse con nebbia e illuminazione riscritte: nebbia lineare e lontana, foschia a terra con banchi in movimento, nebbia illuminata dalla luna e dalle torce, ombre senza rumore, luce del gioco rispettata. Richiede "Better rendering" attivo. Consigliato: Draw distance 3x (Settings > Display).
 repository=https://github.com/Leproide/DansCurseV2
-commit=490491c3f83eb05691f9ad2217fba2748aec5432
+commit=6b7b805b9c5c6740bfd0a2b1bda0d246112565ff
 authors=Leproide, flaffymg
 icon=icon.png
 tags=shader
