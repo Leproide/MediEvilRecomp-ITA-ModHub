@@ -1,0 +1,7 @@
+type=mod
+name=Mod di esempio
+description=Una o due frasi su cosa fa. Questo file e' ignorato dall'hub (il nome inizia con _).
+repository=https://github.com/UtenteDiEsempio/ModDiEsempio.git
+commit=0000000000000000000000000000000000000000
+authors=UtenteDiEsempio
+tags=qol, telecamera

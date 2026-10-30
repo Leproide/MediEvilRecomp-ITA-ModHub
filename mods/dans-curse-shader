@@ -1,0 +1,7 @@
+type=shader
+name=Dan's Curse Shader
+description=Shader che rinnova l'aspetto del gioco: luci e ombre, bagliori, bloom, raggi di luce, cielo e acqua con onde. Richiede "Better rendering" attivo.
+repository=https://github.com/flafmg/DansCurse
+commit=1747991195f82da3afb3350c78cf66a142fa2c14
+authors=flaffymg
+tags=shader
