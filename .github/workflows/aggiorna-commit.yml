@@ -1,0 +1,48 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# MediEvilRecomp ITA - Mod Hub
+# Author: https://github.com/Leproide
+#
+# Le voci con la riga "# segui-ultimo" seguono sempre l'ultima versione del loro repository:
+# ogni ora (o a mano da Actions) commit= viene aggiornato al commit piu' recente del ramo
+# principale del repository indicato in repository=.
+
+name: Aggiorna commit
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  aggiorna:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Commit piu' recenti delle voci "segui-ultimo"
+        run: |
+          changed=0
+          for f in mods/*; do
+            case "$(basename "$f")" in _*) continue ;; esac
+            grep -q '^# segui-ultimo' "$f" || continue
+            repo="$(sed -n 's/^repository=//p' "$f" | tr -d '\r')"
+            head="$(git ls-remote "$repo" HEAD | cut -f1)"
+            if [ "${#head}" -ne 40 ]; then
+              echo "$f: $repo non raggiungibile"
+              continue
+            fi
+            if ! grep -q "^commit=$head" "$f"; then
+              sed -i "s/^commit=.*/commit=$head/" "$f"
+              echo "$f -> $head"
+              changed=1
+            fi
+          done
+          if [ "$changed" = 1 ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+            git commit -am "Voci aggiornate all'ultimo commit dei repository"
+            git push
+          fi

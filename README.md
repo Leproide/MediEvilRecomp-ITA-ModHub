@@ -41,6 +41,8 @@ tags=shader
 
 Righe vuote e righe che iniziano con `#` vengono ignorate.
 
+Una voce con la riga `# segui-ultimo` segue sempre l'ultima versione del suo repository: il workflow `.github/workflows/aggiorna-commit.yml` controlla ogni ora il commit più recente del ramo principale e aggiorna `commit=` da solo (si può anche avviare a mano da **Actions**). Nel gioco la mod installata risulta allora da aggiornare.
+
 ## Dove ospitarlo
 
 Il gioco scarica le voci dalla cartella `mods/` del ramo `main` (configurabile). Funziona con:
