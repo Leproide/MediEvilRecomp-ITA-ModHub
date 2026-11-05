@@ -3,6 +3,6 @@ name=Gallowmere
 description=Shader predefinito di MediEvilRecomp ITA, sui dati veri del rendering: luce del gioco con occlusione, luna e luci 3D (fiamme, magie), ombre, riflessi su metallo e acqua, nebbia e foschia a terra, raggi di luna, bloom. Richiede MediEvilRecomp ITA v1.1.16 o successiva e "Better rendering" attivo.
 repository=https://github.com/Leproide/gallowmere-shader
 # segui-ultimo: commit aggiornato da solo all'ultimo del repository (.github/workflows/aggiorna-commit.yml)
-commit=0d6f677937e663835ca4f26b51e42085f0bca509
+commit=b483b45350704595de60d6810f16ac1fa56fcfcc
 authors=Leproide
 tags=shader
